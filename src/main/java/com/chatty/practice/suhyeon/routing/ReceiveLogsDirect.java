@@ -1,4 +1,4 @@
-package com.chatty.practice.basic.tutorial.topic;
+package com.chatty.practice.suhyeon.routing;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
@@ -8,7 +8,7 @@ import com.rabbitmq.client.DeliverCallback;
 
 public class ReceiveLogsDirect {
 
-    private static final String EXCHANGE_NAME = "topic_logs";
+    private static final String EXCHANGE_NAME = "direct_logs";
 
     public static void main(String[] args) throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
@@ -19,9 +19,8 @@ public class ReceiveLogsDirect {
 
         String randomQueue = channel.queueDeclare().getQueue();
 
-        // binding key has the pattern of "<facility>.<severity>"
-        String topic = "service.warn";
-        channel.queueBind(randomQueue,EXCHANGE_NAME,topic);
+        String severity = "warn";
+        channel.queueBind(randomQueue,EXCHANGE_NAME,severity);
 
         DeliverCallback deliverCallback = (consumerTag, delivery) -> {
             String message = new String(delivery.getBody(), "UTF-8");
