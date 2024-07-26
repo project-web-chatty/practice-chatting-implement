@@ -18,6 +18,7 @@ public class Subscriber {
 
 
         String randomQueue = channel.queueDeclare().getQueue();
+        // 이름은 랜덤하게 정해진다. 해당 큐가 어느 exchange에 bind 될지가 중요하다
         // last param is binding key. if exchange's type is a fanout, it's ignored
         channel.queueBind(randomQueue,EXCHANGE_NAME,"");
 
