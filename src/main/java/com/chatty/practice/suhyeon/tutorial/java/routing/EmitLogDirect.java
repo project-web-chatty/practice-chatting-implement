@@ -1,4 +1,4 @@
-package com.chatty.practice.suhyeon.routing;
+package com.chatty.practice.suhyeon.tutorial.java.routing;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;

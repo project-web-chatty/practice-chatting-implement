@@ -1,4 +1,4 @@
-package com.chatty.practice.suhyeon.taskqueue;
+package com.chatty.practice.suhyeon.tutorial.java.taskqueue;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;

@@ -1,4 +1,4 @@
-package com.chatty.practice.suhyeon.pubandsub;
+package com.chatty.practice.suhyeon.tutorial.java.pubandsub;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
