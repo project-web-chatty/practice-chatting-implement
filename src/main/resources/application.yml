@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: usage_message ,pub-sub, sender
+
+logging:
+  level:
+    org: ERROR
+
+tutorial:
+  client:
+    duration: 10000 # 어플리케이션 실행시 duration 동안 스레드 sleep 후 종료
