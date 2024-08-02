@@ -1,4 +1,4 @@
-package com.chatty.practice.suhyeon.tutorial.chatapp.controller;
+package com.chatty.practice.suhyeon.tutorial.chatapp.service;
 
 
 import com.chatty.practice.suhyeon.tutorial.chatapp.domain.ChatMessageDocument;
