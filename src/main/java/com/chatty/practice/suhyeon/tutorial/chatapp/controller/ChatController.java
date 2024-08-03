@@ -30,7 +30,7 @@ public class ChatController {
         chatService.saveMessageToMongoDB(message);
     }
 
-    // 특정 채널 페이지에 들어갔을때 db에서 메시지를 가져온다.
+    // 특정 채널 페이지에 들어갔을 때 db에서 메시지를 가져온다.
     @GetMapping("/channel/{channelId}")
     public List<ChatMessage> getMessagesByChannel(@PathVariable String channelId) {
         return chatService.getMessagesByChannelId(channelId);
