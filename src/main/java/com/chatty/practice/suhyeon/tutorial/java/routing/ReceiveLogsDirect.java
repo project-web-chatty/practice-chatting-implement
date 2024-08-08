@@ -1,14 +1,14 @@
-package com.chatty.practice.suhyeon.pubandsub;
+package com.chatty.practice.suhyeon.tutorial.java.routing;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.DeliverCallback;
 
-// pub&sub -> queue binding
-public class Subscriber {
 
-    private static final String EXCHANGE_NAME = "logs";
+public class ReceiveLogsDirect {
+
+    private static final String EXCHANGE_NAME = "direct_logs";
 
     public static void main(String[] args) throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
@@ -18,12 +18,13 @@ public class Subscriber {
 
 
         String randomQueue = channel.queueDeclare().getQueue();
-        // last param is binding key. if exchange's type is a fanout, it's ignored
-        channel.queueBind(randomQueue,EXCHANGE_NAME,"");
+
+        String severity = "warn";
+        channel.queueBind(randomQueue,EXCHANGE_NAME,severity);
 
         DeliverCallback deliverCallback = (consumerTag, delivery) -> {
             String message = new String(delivery.getBody(), "UTF-8");
-            System.out.println(" [x] Received '" + message + "'");
+            System.out.println(" [x] Received, severity type : " + delivery.getEnvelope().getRoutingKey()+" , '" + message + "'");
         };
 
         boolean autoAck = true;

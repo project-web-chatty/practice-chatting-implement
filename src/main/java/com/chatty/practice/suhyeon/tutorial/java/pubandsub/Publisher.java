@@ -1,4 +1,4 @@
-package com.chatty.practice.suhyeon.pubandsub;
+package com.chatty.practice.suhyeon.tutorial.java.pubandsub;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
@@ -22,6 +22,7 @@ public class Publisher {
             // first param "logs" is a default exchange
             // don't need a persistence
             // routeKey "" will be ignored
+            // publisher 입장에서는 queue의 존재에 대해 알 필요가 없음
             channel.basicPublish(EXCHANGE_NAME, "", null, logMessage.getBytes());
 
             System.out.println(" [x] Sent '" + logMessage + "'");

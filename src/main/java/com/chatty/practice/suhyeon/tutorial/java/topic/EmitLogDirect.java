@@ -1,4 +1,4 @@
-package com.chatty.practice.suhyeon.topic;
+package com.chatty.practice.suhyeon.tutorial.java.topic;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;

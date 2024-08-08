@@ -1,0 +1,12 @@
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: chatty_db
+
+
+#spring:
+#  data:
+#    mongodb:
+#      uri: mongodb+srv://admin:chatty1426@basecluster.2dybdsm.mongodb.net/chatty_db?retryWrites=true&w=majority
